@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.example.CalculatorTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2023-07-05T06:59:27" hostname="Chocochip-MacBook.local" time="0.015">
+<testsuite name="org.example.CalculatorTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2023-07-05T07:43:48" hostname="Chocochip-MacBook.local" time="0.02">
   <properties/>
-  <testcase name="숫자 하나를 문자열로 입력할 경우 해당 숫자를 반환한다." classname="org.example.CalculatorTest" time="0.009"/>
-  <testcase name="빈 문자열인 경우, 0을 반환한다," classname="org.example.CalculatorTest" time="0.001"/>
-  <testcase name="구분자를 컴마(,) 이외에 콜론(:)을 사용할 수 있다." classname="org.example.CalculatorTest" time="0.0"/>
-  <testcase name="Null 값을 입력했을 경우 0을 반환한다." classname="org.example.CalculatorTest" time="0.001"/>
-  <testcase name="숫자 두개를 컴마(,) 구분자로 입력할 경우 두 숫자의 합을 반환한다." classname="org.example.CalculatorTest" time="0.001"/>
+  <testcase name="두 개의 연산자에 대해 -를 계산할 수 있다." classname="org.example.CalculatorTest" time="0.009"/>
+  <testcase name="두 개의 연산자에 대해 +를 계산할 수 있다." classname="org.example.CalculatorTest" time="0.001"/>
+  <testcase name="숫자 하나를 문자열로 입력할 경우 해당 숫자를 반환한다." classname="org.example.CalculatorTest" time="0.0"/>
+  <testcase name="빈 문자열인 경우, 0을 반환한다," classname="org.example.CalculatorTest" time="0.0"/>
+  <testcase name="Null 값을 입력했을 경우 0을 반환한다." classname="org.example.CalculatorTest" time="0.0"/>
+  <testcase name="세 개 이상의 항에 대해서 연산에 성공한다." classname="org.example.CalculatorTest" time="0.0"/>
+  <testcase name="두 개의 연산자에 대해 *를 계산할 수 있다." classname="org.example.CalculatorTest" time="0.0"/>
+  <testcase name="숫자 판별을 검증한다." classname="org.example.CalculatorTest" time="0.002"/>
+  <testcase name="숫자를 띄어쓰기로 구분한다." classname="org.example.CalculatorTest" time="0.001"/>
+  <testcase name="두 개의 연산자에 대해 /를 계산할 수 있다." classname="org.example.CalculatorTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

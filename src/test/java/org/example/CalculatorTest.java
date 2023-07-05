@@ -10,7 +10,7 @@ class CalculatorTest {
     private Calculator calculator;
 
     @BeforeEach
-    void setup(){
+    void setup() {
         calculator = new Calculator();
     }
 
@@ -54,29 +54,99 @@ class CalculatorTest {
     }
 
     @Test
-    @DisplayName("숫자 두개를 컴마(,) 구분자로 입력할 경우 두 숫자의 합을 반환한다.")
+    @DisplayName("숫자를 띄어쓰기로 구분한다.")
     public void checkSum() throws Exception {
         //given
-        String input = "1,2";
+        String input = "1 + 3";
+
+        //when
+        String[] result = calculator.parseInput(input);
+
+        //then
+        assertEquals(result.length, 3);
+    }
+
+    @Test
+    @DisplayName("숫자 판별을 검증한다.")
+    public void checkNum() {
+        //given
+        String oper = "+";
+        String number = "3";
+
+        //when
+        boolean result1 = calculator.isNumber(oper);
+        boolean result2 = calculator.isNumber(number);
+        //then
+        assertAll(
+                () -> assertFalse(result1),
+                () -> assertTrue(result2)
+        );
+    }
+
+    @Test
+    @DisplayName("두 개의 연산자에 대해 +를 계산할 수 있다.")
+    public void addTest() throws Exception {
+        //given
+        String input = "1 + 3";
 
         //when
         int result = calculator.calculate(input);
 
         //then
-        assertEquals(result, 3);
+        assertEquals(result, 4);
     }
 
     @Test
-    @DisplayName("구분자를 컴마(,) 이외에 콜론(:)을 사용할 수 있다.")
-    public void useColon() throws Exception {
+    @DisplayName("두 개의 연산자에 대해 -를 계산할 수 있다.")
+    public void subTest() throws Exception {
         //given
-        String input = "1,2:3";
+        String input = "1 - 3";
+
+        //when
+        int result = calculator.calculate(input);
+
+        //then
+        assertEquals(result, -2);
+    }
+
+    @Test
+    @DisplayName("두 개의 연산자에 대해 *를 계산할 수 있다.")
+    public void mulTest() throws Exception {
+        //given
+        String input = "2 * 3";
 
         //when
         int result = calculator.calculate(input);
 
         //then
         assertEquals(result, 6);
+    }
+
+
+    @Test
+    @DisplayName("두 개의 연산자에 대해 /를 계산할 수 있다.")
+    public void divTest() throws Exception {
+        //given
+        String input = "6 / 3";
+
+        //when
+        int result = calculator.calculate(input);
+
+        //then
+        assertEquals(result, 2);
+    }
+
+    @Test
+    @DisplayName("세 개 이상의 항에 대해서 연산에 성공한다.")
+    public void multipleCalculate() throws Exception {
+        //given
+        String input = "2 + 3 * 4 / 2";
+
+        //when
+        int result = calculator.calculate(input);
+
+        //then
+        assertEquals(result, 10);
     }
 
 }
